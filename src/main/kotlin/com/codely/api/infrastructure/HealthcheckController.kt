@@ -9,5 +9,7 @@ class HealthcheckController {
 
     @GetMapping("/health-check")
     @ResponseBody
-    fun execute() = "OK"
+    fun execute() : String{
+        return  "healthcheck"
+    }
 }
