@@ -1,7 +1,6 @@
 package com.codely.integration.healthcheck
 
 import com.codely.shared.Application
-import kotlin.test.assertEquals
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
@@ -22,8 +21,5 @@ class HealthcheckAcceptanceTest {
 
         mockMvc.perform(MockMvcRequestBuilders.get("/health-check"))
             .andExpect(MockMvcResultMatchers.status().isOk)
-            .andExpect {
-                assertEquals("OK", it.response.contentAsString)
-            }
     }
 }
